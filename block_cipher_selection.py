@@ -43,6 +43,7 @@ class Block_Cipher_Selector:
                     if mode != 'ECB':
                         self.modes[mode] += 10
     
+    '''Check if user desires random data access'''
     def data_access(self):
         answer = self.ask('How do you want to access your encrypted data? 1: in order that it was encrypted, 2: access any data you choose')
         if answer == '1':
@@ -53,6 +54,8 @@ class Block_Cipher_Selector:
             self.modes['CWC'] += 10
             self.modes['ECB'] += 10
     
+    
+    '''Check if user needs to be able to stream data'''
     def stream(self):
         answer = self.ask('Do you plan to be streaming your encrypted data, or will it be kept at rest (like on a hard drive? 1: Stream, 2: At rest')
         if answer == '1':
@@ -62,7 +65,8 @@ class Block_Cipher_Selector:
             self.modes['OFB'] += 10
             self.modes['Counter'] += 10
             self.modes['CWC'] += 10
-    
+        
+    '''Check if NIST standardization matters'''
     def standardization(self):
         answer = self.ask('Do you want your mode to be a NIST recommendation? 1: yes, 2: don\'t care') 
         if answer == '1':
@@ -70,6 +74,7 @@ class Block_Cipher_Selector:
                 if mode != 'CWC':
                     self.modes[mode] += 10
 
+    '''Check if parallelization matters... almost the same as speed but not quite'''
     def parallel(self):
         answer = self.ask('Would you like to be able to parrallelize some parts of encryption or decryption? 1: yes, 2: no')
         
@@ -77,7 +82,8 @@ class Block_Cipher_Selector:
             for mode in self.modes:
                 if mode != 'OFB':
                     self.modes[mode] += 10
-        
+    
+    '''Print table'''
     def print(self):
         contents = {
             'headers': ['Rank', 'Mode of Operation', 'Block/Stream', 'Runtime Efficiency', 'Security', 'Decrypted data Access', 'NIST Recommended?'],
