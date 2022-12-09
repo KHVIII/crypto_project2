@@ -83,8 +83,10 @@ class Block_Cipher_Selector:
                 if mode != 'OFB':
                     self.modes[mode] += 10
     
-    '''Print table'''
+    '''Print table using pretty print libraries'''
     def print(self):
+        '''To add columns, just add an entry to the list for headers
+        to add a row, add an entry to the dict'''
         contents = {
             'headers': ['Rank', 'Mode of Operation', 'Block/Stream', 'Runtime Efficiency', 'Security', 'Decrypted data Access', 'NIST Recommended?'],
             'ECB': ['Electronic Code Book', 'Block', 'Fastest', 'Leaks block equality, may leak image', 'Random', 'Yes'],
