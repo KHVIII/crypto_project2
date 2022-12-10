@@ -10,3 +10,10 @@
 ## Usage
 
 ``` # python3 block_cipher_selection.py ```
+
+## Potential Modes
+ - Electronic Code Book
+ - Cipher Block Chaining
+ - Output Feedback
+ - Galois/Counter
+ - Carter-Wegman + CTR
