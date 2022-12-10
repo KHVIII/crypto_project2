@@ -1,7 +1,12 @@
-#H1 Block Cipher Selection
+# Block Cipher Selection
+ 
+  Block Cipher Selection assists a novice user of cryptography in selecting an appropriate block cipher mode based on their usage requirements.
 
-To run this program, you must have python3 and the library PrettyTables installed.
+## Prerequisites
+  This program relies on a third party library, prettytables, which can be installed using pip:
+  
+``` # pip3 install prettytables ```
 
-To install PrettyTables, run pip3 install prettytables
+## Usage
 
-To run this program, execute python3 block_cipher_selection.py from your command line
+``` # python3 block_cipher_selection.py ```
