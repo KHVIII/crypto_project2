@@ -16,4 +16,5 @@
  - Cipher Block Chaining
  - Output Feedback
  - Galois/Counter
- - Carter-Wegman + CTR
+ - Carter-Wegman + CTR (CRM)
+ - XTS
